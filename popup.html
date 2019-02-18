@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <style>
+             body {
+                 padding: 15px;
+             }
+
+            .grid-toggle-btn {
+              border-radius: 5px;
+              padding: 0px 10px;
+              line-height: 30px;
+              background-color: #1a1f1d;
+              border: none;
+              width: 130px;
+              height: 30px;
+              position: relative;
+              top: 15px;
+              right: 15px;
+              cursor: pointer;
+              color: white;
+              z-index: 99999;
+              outline: 0;
+              margin-bottom: 25px;
+            }
+
+            .grid-toggle-btn:before {
+              content: '';
+              position: absolute;
+              top: -8px;
+              right: 7px;
+              width: 45px;
+              height: 45px;
+              border-radius: 50%;
+              background: gray;
+              transition: right 250ms;
+            }
+
+            .grid-toggle-btn span {
+              float: left
+            }
+
+            .grid-toggle-btn span:last-child {
+              float: right;
+              color: black
+            }
+
+            .grid-toggle-btn.is-on {
+              background-color: #24bd93;
+            }
+
+            .grid-toggle-btn.is-on:before {
+              right: 76px;
+              background-color: darkgreen
+            }
+
+            .refresh {
+                display: none;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div>
+            <button class="grid-toggle-btn" id="grid-toggle-btn">
+        		<span>On</span>
+        		<span>Off</span>
+        	</button>
+        </div>
+        <div>
+            <p>Enter a grid width "Optional"</p>
+            <input id="widthInput" type="text" />
+            <input id="opacityRange" type="range" step=".1" value=".7" max="1" min="0"/>
+            <input type="color" id="colorPicker" value="#add8e6">
+        </div>
+        <script src="popup.js"></script>
+    </body>
+</html>

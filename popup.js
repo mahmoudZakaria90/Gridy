@@ -2,14 +2,14 @@ let gridToggleBtn = document.querySelector('#grid-toggle-btn');
 let widthInput = document.querySelector('#widthInput');
 let opacityRange = document.querySelector('#opacityRange');
 let colorPicker = document.querySelector('#colorPicker');
-let state = false;
+let state = false, 
+base = 12,
+wrap = document.createElement('div');
+wrap.id = "grid-wrap";
+
 
 function build( width, opacity, color ){
-  let wrapWidth = width || window.innerWidth,
-    base = 12,
-    wrap = document.createElement('div');
-    wrap.id = "grid-wrap";
-    wrap.className = width ? "grid-wrap is-container" : "grid-wrap";
+  let wrapWidth = width || window.innerWidth;
     wrap.style.width =  wrapWidth + 'px';
     wrap.style.opacity = opacity ? opacity : 1;
     for (var i = 0; i < base; i++) {
@@ -50,7 +50,7 @@ gridToggleBtn.onclick = function(e) {
     } else {
         e.currentTarget.className = 'grid-toggle-btn';
     }
-    build( widthInput.value, opacityRange.value, colorPicker.value );
+    build();
 }
 
 gridToggleBtn.addEventListener('mousedown', chromeInject.bind(null, 'insertCSS', 'inject.css'), {

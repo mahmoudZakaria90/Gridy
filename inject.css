@@ -32,6 +32,7 @@
 .cols {
   flex: 1 0 auto;
   margin: 0 15px;
+  background-color: rgba(100, 195, 113, .5)
 }
 
 @media(max-width: 961px) {

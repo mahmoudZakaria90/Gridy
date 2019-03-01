@@ -1,13 +1,13 @@
 {
     "name": "Gridy",
-    "version": "1.0",
-    "description": "Grid system for layout blocks alignment!",
+    "version": "1.0.0",
+    "description": "Grid system for layout blocks alignment.",
     "manifest_version": 2,
     "background": {
         "scripts": ["background.js"],
         "persistent": false
     },
-    "permissions": ["tabs", "bookmarks", "activeTab", "storage", "declarativeContent"],
+    "permissions": ["activeTab", "storage", "declarativeContent"],
     "page_action": {
         "default_popup": "popup.html",
         "default_icon": {

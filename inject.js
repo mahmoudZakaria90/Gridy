@@ -1,10 +1,6 @@
-chrome.runtime.onMessage.addListener(function({
-  width,
-  rebuild,
-  state,
-  opacity,
-  color
-}) {
+chrome.runtime.onMessage.addListener(function(payload) {
+  const { width, rebuild, state, opacity, color } = payload;
+
   const minWidth = 320;
   const maxWidth = window.innerWidth;
   const wrapWidth = width < minWidth || width > maxWidth ? maxWidth : width,
@@ -32,10 +28,4 @@ chrome.runtime.onMessage.addListener(function({
       document.body.removeChild(wrapAlready);
     }
   }
-  // chrome.runtime.sendMessage({
-  //   width,
-  //   state,
-  //   opacity,
-  //   color
-  // });
 });
